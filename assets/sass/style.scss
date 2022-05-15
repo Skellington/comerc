@@ -13,6 +13,17 @@ h1, h2, h3, h4, h5, p, a, b, title{
 }
 
 
+.desktop{
+        @media screen and (max-width: 768px) and (min-width: 220px) {
+               display: none !important;
+        }
+}
+.mobile{
+        display: none !important;;
+        @media screen and (max-width: 767px) and (min-width: 220px) {
+                display: flex !important;
+        }
+}
 
 //Efeitos de animação
         //Efeito Subir
@@ -20,6 +31,14 @@ h1, h2, h3, h4, h5, p, a, b, title{
                 opacity: 0;
                 transform: translate3d(0,100px,0);
                 transition: all 1.5s;
+                @media screen and (max-width: 768px) and (min-width: 425px) {
+                        opacity: 1;
+                        transform: translate3d(0,0,0);
+                }
+                @media screen and (max-width: 425px) and (min-width: 10px) {
+                        opacity: 1;
+                        transform: translate3d(0,0,0);
+                }
             }
             .E-subir-start{
                 opacity: 1;
@@ -32,6 +51,14 @@ h1, h2, h3, h4, h5, p, a, b, title{
                 opacity: 0;
                 transform: translate3d(0,-100px,0);
                 transition: all 1.5s;
+                @media screen and (max-width: 768px) and (min-width: 425px) {
+                        opacity: 1;
+                        transform: translate3d(0,0,0);
+                }
+                @media screen and (max-width: 425px) and (min-width: 10px) {
+                        opacity: 1;
+                        transform: translate3d(0,0,0);
+                }
             }
             .E-descer-start{
                 opacity: 1;
@@ -44,6 +71,14 @@ h1, h2, h3, h4, h5, p, a, b, title{
                 opacity: 0;
                 transform: translate3d(-100px,0,0);
                 transition: all 1.5s;
+                @media screen and (max-width: 768px) and (min-width: 425px) {
+                        opacity: 1;
+                        transform: translate3d(0,0,0);
+                }
+                @media screen and (max-width: 425px) and (min-width: 10px) {
+                        opacity: 1;
+                        transform: translate3d(0,0,0);
+                }
             }
             .E-direita-start{
                 opacity: 1;
@@ -56,6 +91,14 @@ h1, h2, h3, h4, h5, p, a, b, title{
                 opacity: 0;
                 transform: translate3d(100px,0,0);
                 transition: all 1.5s;
+                @media screen and (max-width: 768px) and (min-width: 425px) {
+                        opacity: 1;
+                        transform: translate3d(0,0,0);
+                }
+                @media screen and (max-width: 425px) and (min-width: 10px) {
+                        opacity: 1;
+                        transform: translate3d(0,0,0);
+                }
             }
             .E-esquerda-start{
                 opacity: 1;
@@ -68,6 +111,12 @@ h1, h2, h3, h4, h5, p, a, b, title{
                 opacity: 0;
                 transform: translate3d(0,0,0);
                 transition: all 1.5s;
+                @media screen and (max-width: 768px) and (min-width: 425px) {
+                        opacity: 1;
+                }
+                @media screen and (max-width: 425px) and (min-width: 10px) {
+                        opacity: 1;
+                }
             }
             .E-fadein-start{
                 opacity: 1;
@@ -79,9 +128,11 @@ h1, h2, h3, h4, h5, p, a, b, title{
 html{
         background: #10171d;
 }
+
 .container{
         padding: 0px 55px;
 }
+
 header{
         @extend .col-md-12;
         background: #10171d;
@@ -144,12 +195,14 @@ header{
                 }
         }
 }
+
 main{
         @extend .col-md-12;
         padding: 0;
         background: #10171d;
         h2{
                 @extend .col-md-12;
+                width: 100%;
                 padding: 0;
                 margin-bottom: 60px;
                 font-size: 60px;
@@ -168,6 +221,7 @@ main{
                 margin-top: -70px;
                 height: 110vh;
         }
+
         .perfil{
                 @extend .col-md-12; 
                 padding-top: 120px;
@@ -183,6 +237,7 @@ main{
                         color: #fff;
                 }
         }
+
         .logos{
                 @extend .col-md-12;
                 margin-bottom: 130px;
@@ -228,6 +283,7 @@ main{
                         }
                 }
         }
+
         h1{
                 @extend .col-md-12;
                 text-align: center;
@@ -241,6 +297,7 @@ main{
                         display: block;
                 }
         }
+
         .financeiros{
                 @extend .col-md-12;
                 position: relative;
@@ -248,7 +305,8 @@ main{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                flex-wrap: wrap;               
+                flex-wrap: wrap; 
+                overflow: hidden;              
                 &:before{
                         content: url(../images/fundo-financeiros.webp);
                         position: absolute;
@@ -295,6 +353,7 @@ main{
                 }
                 .graficos{                        
                         position: relative;
+                        margin: 0 15px;
                         z-index: 9;
                         padding: 45px 40px;
                         background: #e7f0f0; 
@@ -310,25 +369,36 @@ main{
                 }       
         }
 
-        .ambientais{
+        .ambientais-desktop{
                 @extend .col-md-12;
                 position: relative;
-                padding: 0 0 120px;
+                padding: 0 ;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-wrap: wrap;
+                margin-bottom: 0px;
+                background-image: url(../images/fundo-ambientais.webp);
+                background-repeat: no-repeat;
+                background-position: top;
+                background-size: cover;
+                @media screen and (max-width: 1024px) and (min-width: 100px) {
+                        display: none !important;
+                }
+               
                 .bon-nome{
                         @extend .col-md-12;
                         position: relative;
+                        z-index: 9;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        margin-bottom: 150px;
+                        margin: 70px 0 150px;
                         .foto-ambientais{
                                 position: absolute;
                                 top: 0;
                                 left: 0;
+                                max-width: 100%;
                         }
                         .container{
                                 display: flex;
@@ -341,12 +411,775 @@ main{
                                         margin-bottom: 15px;
                                 }                       
                                 p{
-                                        font-size: 30px;
+                                        font-size: 28px;
                                         font-weight: 400;
                                         color: #fff;
                                         text-align: left;
                                 }   
                         }           
-                }                  
+                }
+                .co2{
+                        @extend .col-md-12;
+                        position: relative;
+                        z-index: 9;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 0px;
+                        margin-top: 20px;
+                        .fabrica{
+                             max-width: 100%;   
+                        }
+                        .container{
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;     
+                        }
+                        .box{
+                                @extend .col-md-5;
+                                display: flex;
+                                justify-content: center;
+                                align-items: flex-start;
+                                flex-direction: column;
+                                padding: 0;
+                                img{
+                                        margin-bottom: 15px;
+                                }                       
+                                p{
+                                        font-size: 28px;
+                                        font-weight: 400;
+                                        color: #fff;
+                                        text-align: left;
+                                }
+                                strong{
+                                        line-height: 1;
+                                        font-size: 28px;
+                                        color: #fff;
+                                        text-align: left;
+                                        .milhoes{
+                                                font-size: 40px;
+                                        }
+                                        .number{
+                                                font-size: 60px;  
+                                        }
+                                        .menor{
+                                                position: relative;
+                                                font-size: 17px;
+                                                bottom: -5px;
+                                                left: -2px; 
+                                        }
+                                }
+                        }             
+                } 
+                .mudas-nativas{
+                        @extend .col-md-12;
+                        position: relative;
+                        z-index: 9;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 200px 0;
+                        .foto-ambientais{
+                                position: absolute;
+                                top: -20px;
+                                left: 0;
+                                max-width: 100%;
+                        }
+                        .container{
+                                display: flex;
+                                justify-content: flex-end;
+                                align-items: center;     
+                        }
+                        .box{
+                                @extend .col-md-6;
+                                img{
+                                        margin-bottom: 15px;
+                                        max-width: 100%;
+                                }                       
+                                p{
+                                        font-size: 28px;
+                                        font-weight: 400;
+                                        color: #fff;
+                                        text-align: left;
+                                }   
+                        }         
+                }               
         }
+
+        .ambientais-mobile{
+                @extend .col-md-12;
+                position: relative;
+                padding: 0 ;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                margin-bottom: 0px;               
+                display: none !important;
+                @media screen and (max-width: 1024px) and (min-width: 100px) {
+                        display: flex !important;
+                }  
+                .container{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;  
+                        flex-direction: column; 
+                        padding: 0; 
+                }                
+                .bon-nome{
+                        width: 100%;
+                        position: relative;
+                        z-index: 9;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;                        
+                        margin: 30px 0 60px;
+                        aside{
+                                width: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                padding: 0;
+                                margin-bottom: 10px;
+                                img{
+                                        width: 30%;
+                                        padding: 0 13px;
+                                        margin-bottom: 15px;
+                                }
+                                p{
+                                        font-size: 17px !important;
+                                        letter-spacing: 0;
+                                        font-weight: 400;
+                                        color: #fff;
+                                        text-align: left;
+                                }      
+                        }
+                        
+                        .foto-ambientais{
+                                position: relative;
+                                top: 0;
+                                left: 0;
+                                max-width: 100%;
+                        }                                                 
+                }
+                .co2{
+                        width: 100%;
+                        position: relative;
+                        z-index: 9;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .fabrica{
+                             max-width: 100%;   
+                        }                        
+                        .box{
+                                width: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                padding: 0;
+                                margin-bottom: 10px;
+                                img{
+                                        width: 30%;
+                                        padding: 0 13px;
+                                        margin-bottom: 15px;
+                                }
+                                p{
+                                        font-size: 17px !important;
+                                        letter-spacing: 0;
+                                        font-weight: 400;
+                                        color: #fff;
+                                        text-align: left;
+                                } 
+                                strong{
+                                        line-height: 1;
+                                        font-size: 20px;
+                                        color: #fff;
+                                        text-align: left;
+                                        .milhoes{
+                                                font-size: 27px;
+                                        }
+                                        .number{
+                                                font-size: 23px;  
+                                        }
+                                        .menor{
+                                                position: relative;
+                                                font-size: 12px;
+                                                bottom: -5px;
+                                                left: -2px; 
+                                        } 
+                                }
+                        }             
+                } 
+                .mudas-nativas{
+                        @extend .col-md-12;
+                        position: relative;
+                        z-index: 9;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 60px 0;
+                        aside{
+                                width: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                padding: 0;
+                                margin-bottom: 10px;
+                                img{
+                                        width: 30%;
+                                        padding: 0 13px;
+                                        margin-bottom: 15px;
+                                }
+                                p{
+                                        font-size: 16px !important;
+                                        letter-spacing: 0;
+                                        font-weight: 400;
+                                        color: #fff;
+                                        text-align: left;
+                                }      
+                        }
+                        
+                        .foto-ambientais{
+                                position: relative;
+                                top: 0;
+                                left: 0;
+                                max-width: 100%;
+                        }         
+                }               
+        }
+
+        .socias{
+                @extend .col-md-12;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-bottom: 40px;
+                h2{
+                        margin-bottom: 100px;
+                }
+                article{
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        width: 750px;
+                        margin-bottom: 70px;
+                        margin-left: 100px;
+                        div{
+                                margin-left: 70px;                                                        
+                                p{
+                                        font-size: 30px;
+                                        font-weight: 400;
+                                        color: #fff;
+                                        margin: 0;
+                                }
+                                h3{
+                                        font-size: 60px;
+                                        font-weight: 700;
+                                        margin: 0;
+                                        color: #b8f513;
+                                        display: flex;
+                                        align-items: flex-end;
+                                        line-height: 0.9;
+                                }
+                                .verde{
+                                        font-size: 30px;
+                                        margin: 0 7px;                                       
+                                }
+                                .porcetagem{
+                                        font-size: 40px;
+                                        margin-left: 3px;
+                                }
+                        }
+                }
+        }
+
+        .relatorio{
+                @extend .col-md-12;
+                background-image: url(../images/fundo-relatorio.webp);
+                background-repeat: no-repeat;
+                background-position: top;
+                background-size: cover;
+                padding: 245px 0 75px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                p{
+                        font-size: 30px;
+                        color: #10171d;
+                        text-align: center; 
+                        margin-bottom: 40px;
+                        line-height: 1.3;    
+                }
+                a{
+                        position: relative;
+                        text-decoration: none;
+                        background: #fff;
+                        font-size: 44px;
+                        color: #10171d;
+                        text-align: center;
+                        border-radius: 50px;
+                        padding: 10px 60px;
+                        font-weight: 700;
+                        -webkit-box-shadow: 1px 9px 13px 3px #00000000; 
+                        box-shadow: 1px 9px 13px 3px #00000000;
+                        top: 0;
+                        transition: all .3s;
+                        &:hover{
+                                top: -3px;
+                                transition: all .3s;
+                                -webkit-box-shadow: 1px 9px 13px 3px #00000052; 
+                                box-shadow: 1px 9px 13px 3px #00000052;
+                        }
+                }
+        }
+}
+
+footer{
+        @extend .col-md-12;
+        position: relative;
+        background: #1a2d38;
+        padding: 75px 0;
+        @media screen and (max-width: 992px) and (min-width: 1px) {
+                
+        }
+        .container {
+                padding: 0px 0;
+        }
+        p{
+                margin: 0 0 25px;
+                font-size: 14px;
+                color: #fff;
+        }
+        
+        .links-midia{
+                @extend .col-md-12;
+                padding: 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                @media screen and (max-width: 992px) and (min-width: 1px) {
+                        width: 100%;
+                        flex-direction: column;
+                        align-items: center;
+                }
+                .midia{
+                        @extend .col-md-3;
+                        padding-left: 0;
+                        height: auto;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        @media screen and (max-width: 992px) and (min-width: 1px) {margin-bottom: 30px;}
+                        .rede-social{
+                                width: 100%;
+                                margin-bottom: 56px;
+                                @media screen and (max-width: 992px) and (min-width: 1px) {margin-bottom: 30px;}
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                flex-direction: column;
+                                .logo{                                      
+                                        margin: 0 30px 30px;
+                                }
+                                div{
+                                        width: 100%;
+                                        padding: 0 40px 0px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+                                        a{
+                                                text-decoration: none;
+                                                &:hover{
+                                                        color: #fff;    
+                                                }
+                                        }                                       
+                                }                                                       
+                        }
+                        .sac{                                
+                                h4{
+                                        margin: 0 0 15px;
+                                        font-size: 20px;
+                                        color: #fff;
+                                        font-weight: 600;
+                                }
+                                a{
+                                        font-size: 15px;
+                                        color: #fff;
+                                        font-weight: 600;
+                                        img{
+                                                margin-right: 6px;    
+                                        }
+                                        &:hover{
+                                                color: #fff;    
+                                        }
+                                }
+                                p{
+                                        margin: 0;
+                                }
+                                div{
+                                        display: none;
+                                        @media screen and (max-width: 992px) and (min-width: 1px) {
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                flex-direction: column;                                               
+                                        }
+                                        .politica{
+                                                margin-top: 30px;
+                                        }
+                                }
+                                @media screen and (max-width: 992px) and (min-width: 1px) {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        flex-direction: column;
+                                        h4{
+                                            margin: 20px 0 10px;
+                                            text-align: center; 
+                                        }      
+                                }                                
+                        }
+                }
+                .link{
+                        @extend .col-md-9;
+                        padding: 0 5px;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        @media screen and (max-width: 992px) and (min-width: 1px) {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                flex-direction: column;
+                        }                       
+                        a{
+                                font-size: 14px;  
+                                color: rgba(255,255,255,0.54);
+                                line-height: 1.3;
+                                text-decoration: none;
+                                b{
+                                        font-size: 16px;
+                                        color: #fff; 
+                                        @media screen and (max-width: 992px) and (min-width: 1px) {font-size: 20px;}     
+                                }
+                                &:hover{
+                                        color: rgba(255,255,255,0.54);  
+                                }
+                        }
+                        ul{
+                                padding-right: 8px;
+                                padding-left: 0;
+                                height: auto;
+
+                                li{
+                                        text-align: left;
+                                        color: #fff;
+                                        list-style: none;
+                                        line-height: 1.3;
+                                        margin-bottom: 8px;
+                                        @media screen and (max-width: 992px) and (min-width: 1px) {text-align: center;}     
+                                }
+                        }
+                        .cards{
+                                @media screen and (max-width: 992px) and (min-width: 1px) {display: none;}
+                        }
+                        .cards2{
+                                display: none;
+                                @media screen and (max-width: 992px) and (min-width: 1px) {display: block;}
+                        }
+                       
+                }
+        }
+        .codigo-etica{
+                @extend .col-md-3;
+                width: 26%;
+                padding-left: 0;
+                line-height: 1.3;
+                @media screen and (max-width: 992px) and (min-width: 1px) {display: none;}
+                a{
+                        color: #fff;
+                        text-decoration: underline;
+                        font-size: 20px; 
+                        &:hover{
+                                 color: #fff;   
+                        }                 
+                }
+                p{
+                        margin: 15px 0 8px;
+                }
+        }
+        .logos{
+                @extend .col-md-12;
+                padding: 0;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                @media screen and (max-width: 992px) and (min-width: 1px) {display: none;}
+                a{
+                        display: block;
+                        padding-bottom: 5px;
+                        text-decoration: none;
+                        color: #fff;
+                        &:hover{
+                                 color: #fff;   
+                        }  
+                }
+                p{
+
+                }
+                .box2{
+                        padding-right: 30px;
+                }
+                .box{
+                        margin: 0 20px;
+                        padding: 0 20px;
+                        text-align: center;
+                        img{
+                                height: 70px;
+                                text-align: center;
+                                margin-bottom: 22px;
+                        }
+                        h5{
+                                margin: 0;
+                                font-size: 12px;
+                                color: #fff;
+                                text-align: center;
+                                width: 100%;
+                        }
+                        span{
+                                display: block;
+                                font-size: 11px;
+                                color: #3dbf29;
+                                margin-top: 10px
+                        }                        
+                }
+                h4{
+                        color: #fff; 
+                        font-size: 16px; 
+                        font-weight: 400;
+                        margin: 20px 0;
+                }
+        }
+        .azul{
+                font-size: 14px;
+                color: #406c88 !important;
+                &:hover{
+                        color: #406c88 !important;    
+                }
+                img{
+                        margin-right: 6px;
+                }
+        }
+        .copyright{
+                @extend .col-md-12;                
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                display: none;
+                @media screen and (max-width: 992px) and (min-width: 1px) {display: none;}
+        }
+}
+
+@media screen and (max-width: 1735px) and (min-width: 1440px) {
+        .bon-nome .foto-ambientais {width: 55%;}
+        .mudas-nativas .foto-ambientais {width: 48%;}
+        .mudas-nativas {margin: 80px 0; padding: 50px 0;}
+}
+@media screen and (max-width: 1439px) and (min-width: 1024px) {
+        .bon-nome .foto-ambientais {width: 55%;}
+        .mudas-nativas .foto-ambientais {width: 48%;}
+        main .ambientais-desktop .mudas-nativas {margin: 80px 0; padding: 50px 0;}
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+        main .logos h3 {width: 100%;}
+        main .logos .box {
+                width: 30%;
+                flex-direction: inherit;
+                flex-wrap: wrap;
+                margin-bottom: 40px;              
+        }
+        main .container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                align-items: flex-start;           
+        }
+}
+
+@media screen and (max-width: 768px) and (min-width: 425px) {
+        .container {padding: 0px 15px;}
+        header article {justify-content: center;}
+        header .logos {margin-bottom: 20px;}
+        main .banner {
+                margin-top: 0px;
+                height: 80vh;
+        }
+        main .perfil {
+                padding: 0;
+                margin: -130px 0 60px;
+                background: -moz-linear-gradient(0deg, #10171d 86%, rgba(16,23,29,0) 100%);
+                background: -webkit-linear-gradient(0deg, #10171d 86%, rgba(16,23,29,0) 100%);
+                background: linear-gradient(0deg, #10171d 86%, rgba(16,23,29,0) 100%);
+        }
+
+        main h2 {
+                margin-bottom: 30px;
+        }
+        main .logos .box {
+                width: 50%;                
+                margin-bottom: 40px;
+                flex-direction: column;              
+        }
+        main .container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                align-items: flex-start;           
+        }
+        main h2 {
+                margin-bottom: 30px;
+                width: 100%;
+        }
+        main .logos { margin-bottom: 60px;}
+        main .logos h3 {width: 100%;}
+       
+        main .logos .box strong {
+                width: 100%; 
+                margin-bottom: 15px;
+                font-size: 35px;
+                line-height: 1.1;
+        }
+        main .logos .box h4 {
+                margin: 10px;
+                width: 100px;
+                height: 100px;
+                font-size: 80px;
+        }      
+        main .logos .box img {width: initial; height: auto;  margin: 5%; }
+
+        main h1 {font-size: 75px; margin-bottom: 30px;}
+        main .financeiros .cards {margin-bottom: 60px;}
+        main .financeiros .graficos img {margin: 30px !important;}
+
+        main .socias h2 { margin-bottom: 30px;}
+        main .socias article {
+                align-items: center;
+                width: 70%;
+                margin-left: 0;
+        }
+        main .socias article img{width: 15%;}
+        main .socias article div {
+                margin-left: 20px;
+                .mobile {
+                        font-size: 40px;
+                        font-size: 30px;
+                        display: inherit !important;
+                        p{
+                                display: inline-flex;
+                                margin-left: 5px;
+                        }
+                }
+                h3 {
+                        font-size: 40px;
+                        font-size: 30px;                       
+                        p{
+                                display: inline-flex;
+                                margin-left: 5px;
+                        }
+                }
+                p {
+                    font-size: 20px;
+                    line-height: 1.3;
+                }
+               .porcetagem { font-size: 20px;}
+        }
+        main .socias {margin-bottom: 0px;}
+        main .relatorio {padding: 140px 0 75px;}
+        main .relatorio p {font-size: 19px; padding: 0 15px;}
+        main .relatorio a {font-size: 25px;}
+}
+
+@media screen and (max-width: 424px) and (min-width: 10px) {
+        .container {padding: 0px 15px;}
+        header article {justify-content: center;}
+        header .logos {margin-bottom: 20px;}
+        main .banner {
+                margin-top: 0px;
+                height: 80vh;
+        }
+        main .perfil {
+                padding: 0;
+                margin: -130px 0 60px;
+                background: -moz-linear-gradient(0deg, #10171d 86%, rgba(16,23,29,0) 100%);
+                background: -webkit-linear-gradient(0deg, #10171d 86%, rgba(16,23,29,0) 100%);
+                background: linear-gradient(0deg, #10171d 86%, rgba(16,23,29,0) 100%);
+        }
+        main h2 {
+                margin-bottom: 30px;
+                width: 100%;
+        }
+        main .logos { margin-bottom: 60px;}
+        main .logos h3 {width: 100%;}
+        main .logos .box {
+                width: 100%;
+                flex-direction: inherit;
+                flex-wrap: wrap;
+                 margin-bottom: 40px;              
+        }
+        main .logos .box strong {
+                width: 100%; 
+                margin-bottom: 15px;
+                font-size: 35px;
+                line-height: 1.1;
+        }
+        main .logos .box h4 {
+                margin: 10px;
+                width: 100px;
+                height: 100px;
+                font-size: 80px;
+        }
+        main .logos .box img {width: 40%;height: auto;  margin: 5%; }
+
+        main h1 {font-size: 75px; margin-bottom: 30px;}  
+        main .financeiros .cards {margin-bottom: 60px;}
+        main .socias h2 { margin-bottom: 30px;}
+        main .socias article {
+                align-items: center;
+                width: 100%;
+                margin-left: 0;
+        }
+        main .socias article img{width: 30%;}
+        main .socias article div {
+                margin-left: 20px;
+                .mobile {
+                        font-size: 40px;
+                        font-size: 30px;
+                        display: inherit !important;
+                        p{
+                                display: inline-flex;
+                                margin-left: 5px;
+                        }
+                }
+                h3 {
+                        font-size: 40px;
+                        font-size: 30px;                       
+                        p{
+                                display: inline-flex;
+                                margin-left: 5px;
+                        }
+                }
+                p {
+                    font-size: 20px;
+                    line-height: 1.3;
+                }
+               .porcetagem { font-size: 20px;}
+        }
+        main .socias {margin-bottom: 0px;}
+        main .relatorio {padding: 140px 0 75px;}
+        main .relatorio p {font-size: 19px; padding: 0 15px;}
+        main .relatorio a {font-size: 25px;}
 }
