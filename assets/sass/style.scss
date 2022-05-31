@@ -140,10 +140,7 @@ header{
         top: 0;
         padding: 15px 0 15px;
         border-bottom: 1px solid #b6f41a;
-        z-index: 9;
-        .container{
-                width: 88%;
-        }
+        z-index: 9;        
         article{
                 @extend .col-md-12;
                 padding: 0;
@@ -203,6 +200,14 @@ header{
                         }
                 }
         }
+        .traducao{
+
+                a, span{
+                        color: #fff;
+                        font-size: 18px;
+                        font-weight: 600;   
+                }
+        }
 }
 
 main{
@@ -230,10 +235,35 @@ main{
                 margin-top: -70px;
                 height: 110vh;
         }
+        .banner-en{
+                @extend .col-md-12;
+                background-image: url(../images/banner-en.webp);
+                background-repeat: no-repeat;
+                background-position: top;
+                background-size: cover;
+                padding: 0;
+                margin-top: -90px;
+                height: 120vh;
+        }
 
         .perfil{
                 @extend .col-md-12; 
                 padding-top: 120px;
+                margin: -130px 0 120px;
+                background: rgb(16,23,29);
+                background: -moz-linear-gradient(0deg, rgba(16,23,29,1) 66%, rgba(16,23,29,0) 100%);
+                background: -webkit-linear-gradient(0deg, rgba(16,23,29,1) 66%, rgba(16,23,29,0) 100%);
+                background: linear-gradient(0deg, rgba(16,23,29,1) 66%, rgba(16,23,29,0) 100%);
+                
+                p{
+                        font-size: 20px;
+                        text-align: center;
+                        color: #fff;
+                }
+        }
+        .perfil-en{
+                @extend .col-md-12; 
+                padding-top: 160px;
                 margin: -130px 0 120px;
                 background: rgb(16,23,29);
                 background: -moz-linear-gradient(0deg, rgba(16,23,29,1) 66%, rgba(16,23,29,0) 100%);
@@ -1006,17 +1036,28 @@ footer{
 @media screen and (max-width: 1439px) and (min-width: 1024px) {
         .bon-nome .foto-ambientais {width: 55%;}
         .mudas-nativas .foto-ambientais {width: 48%;}
-        main .ambientais-desktop .mudas-nativas {margin: 80px 0; padding: 50px 0;}
-        header article {justify-content: center;}
+        main .ambientais-desktop .mudas-nativas {margin: 80px 0; padding: 50px 0;}        
         header .logos {margin-bottom: 15px;}
+        main .banner {
+                margin-top: -30px;
+                height: 110vh;
+        }
+        main .perfil {padding-top: 40px;}
 }
 @media screen and (max-width: 1059px) and (min-width: 10px) {
-        header article {justify-content: center; flex-direction: column;}
         header article .box {flex-direction: column;}
         header .download {margin-bottom: 15px;}
         header .download p {text-align: center;}
 }
 @media screen and (max-width: 1023px) and (min-width: 768px) {
+        header article {justify-content: center; flex-direction: column;}
+        header .logos {margin-bottom: 20px;}
+        main .banner {
+                margin-top: -30px;
+                height: 110vh;
+        }
+        main .perfil {padding-top: 40px;}
+
         main .logos h3 {width: 100%;}
         main .logos .box {
                 width: 30%;
@@ -1034,7 +1075,7 @@ footer{
 
 @media screen and (max-width: 768px) and (min-width: 425px) {
         .container {padding: 0px 15px;}
-        header article {justify-content: center;}
+        header article {justify-content: center; flex-direction: column;}
         header .logos {margin-bottom: 20px;}
         main .banner {
                 margin-top: 0px;
@@ -1205,4 +1246,6 @@ footer{
         main .relatorio {padding: 140px 0 75px;}
         main .relatorio p {font-size: 19px; padding: 0 15px;}
         main .relatorio a {font-size: 25px;}
+        main .ambientais-mobile h2{font-size: 34px;}
+        footer .links-midia .midia .sac .links{font-size: 12px !important;}
 }
